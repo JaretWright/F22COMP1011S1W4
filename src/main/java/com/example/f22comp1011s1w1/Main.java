@@ -20,14 +20,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-//        Artist artist1 = new Artist("Alfred","Jackson", LocalDate.of(1987,10,11));
-//        Artist artist2 = new Artist("Jack","Johnson", LocalDate.of(1997,01,8));
-//
-//        System.out.println("artist 1: "+artist1);
-//        System.out.println("artist 2: "+artist2);
-
-        ArrayList<Artist> artists = DBUtility.getArtistsFromDB();
-        System.out.println(artists);
-        launch();
+           launch();
     }
 }

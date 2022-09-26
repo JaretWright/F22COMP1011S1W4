@@ -4,13 +4,26 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Artist {
+    private int artistID;
     private String firstName, lastName;
     private LocalDate birthday;
 
-    public Artist(String firstName, String lastName, LocalDate birthday) {
+    public Artist(int artistID, String firstName, String lastName, LocalDate birthday) {
+        setArtistID(artistID);
         setFirstName(firstName);
         setLastName(lastName);
         setBirthday(birthday);
+    }
+
+    public int getArtistID() {
+        return artistID;
+    }
+
+    public void setArtistID(int artistID) {
+        if (artistID>0)
+            this.artistID = artistID;
+        else
+            throw new IllegalArgumentException("ArtistID must be greater than 0");
     }
 
     public String getFirstName() {

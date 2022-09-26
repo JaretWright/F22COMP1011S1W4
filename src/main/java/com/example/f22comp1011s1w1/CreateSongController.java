@@ -44,12 +44,7 @@ public class CreateSongController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Artist artist1 = new Artist("Alfred","Jackson", LocalDate.of(1987,10,11));
-        Artist artist2 = new Artist("Jack","Johnson", LocalDate.of(1997,01,8));
-
-        artistComboBox.getItems().add(artist1);
-        artistComboBox.getItems().add(artist2);
-
+        artistComboBox.getItems().addAll(DBUtility.getArtistsFromDB());
         genreComboBox.getItems().addAll(Song.getGenres());
 
 //        LengthChangeListener lcl = new LengthChangeListener();

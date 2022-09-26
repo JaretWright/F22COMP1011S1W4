@@ -8,8 +8,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DBUtility {
+    //the user name and password are what ever you have defined on your local
+    //MySQL server
     private static String user = "student";
     private static String password = "student";
+
+    // jdbc:mysql  - this piece tells Java which SQL driver to load
+    // 127.0.0.1:3306 - this tells Java that the MySQL server is at IP 127.0.0.1, port 3306
+    // F22- that is the database name (do not confuse that with a table name)
     private static String connectUrl = "jdbc:mysql://127.0.0.1:3306/F22";
 
     /**
@@ -32,11 +38,12 @@ public class DBUtility {
             //loop over the objects returned and create an Artist object
             while (resultSet.next())
             {
+                int artistID = resultSet.getInt("artistID");
                 String firstName = resultSet.getString("firstName");
                 String lastName = resultSet.getString("lastName");
                 LocalDate birthday = resultSet.getDate("birthday").toLocalDate();
 
-                Artist newArtist = new Artist(firstName,lastName,birthday);
+                Artist newArtist = new Artist(artistID, firstName,lastName,birthday);
                 artists.add(newArtist);
             }
         }
