@@ -26,6 +26,8 @@ public class Main extends Application {
 //        System.out.println("artist 1: "+artist1);
 //        System.out.println("artist 2: "+artist2);
 
+        ArrayList<Artist> artists = DBUtility.getArtistsFromDB();
+        System.out.println(artists);
         launch();
     }
 }
